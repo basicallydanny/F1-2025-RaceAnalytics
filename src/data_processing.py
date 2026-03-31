@@ -8,7 +8,7 @@ def parse_duration_seconds(series: pd.Series) -> pd.Series:
 
 def load_lap_data(path: str) -> pd.DataFrame:
     """Load F1 lap data and normalize key time columns."""
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, low_memory=False)
 
     duration_cols = [
         'Time',
